@@ -1,4 +1,4 @@
-export default () => ({
+export default ({ env }) => ({
     graphql: {
         enabled: true,
         config: {
@@ -7,6 +7,14 @@ export default () => ({
             playgroundAlways: true, // Non-production.
             depthLimit: 7, // Limit query depth.
             amountLimit: 100, // Limit returned items.
+        },
+    },
+    'users-permission': {
+        config: {
+            jwtSecret: env('JWT_SECRET'),
+            jwt: {
+                expiresIn: '1h',
+            },
         },
     },
 });
