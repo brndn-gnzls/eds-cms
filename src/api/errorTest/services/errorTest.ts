@@ -1,0 +1,5 @@
+/**
+ * errorTest service
+ */
+
+export default () => ({});
