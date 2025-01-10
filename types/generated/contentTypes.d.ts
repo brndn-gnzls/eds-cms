@@ -518,6 +518,41 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Footer';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    footerColumn1Header: Schema.Attribute.String;
+    footerColumn1Body: Schema.Attribute.Text;
+    footerColumn2Header: Schema.Attribute.String;
+    footerColumn2Body: Schema.Attribute.Text;
+    footerColumn3Header: Schema.Attribute.String;
+    footerColumn3Body: Schema.Attribute.Text;
+    footerColumn4Header: Schema.Attribute.String;
+    footerColumn4Body: Schema.Attribute.Text;
+    footerColumn5Header: Schema.Attribute.String;
+    footerColumn5Body: Schema.Attribute.Text;
+    legalNotice: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::footer.footer'>;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -956,6 +991,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
+      'api::footer.footer': ApiFooterFooter;
       'api::product.product': ApiProductProduct;
       'api::test-item.test-item': ApiTestItemTestItem;
       'admin::permission': AdminPermission;
