@@ -553,6 +553,38 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeMarketingHomeMarketing extends Struct.SingleTypeSchema {
+  collectionName: 'home_marketings';
+  info: {
+    singularName: 'home-marketing';
+    pluralName: 'home-marketings';
+    displayName: 'HomeMarketing';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading2: Schema.Attribute.String;
+    heading3: Schema.Attribute.String;
+    paragraph: Schema.Attribute.Text;
+    buttonLabel: Schema.Attribute.String;
+    imageUrl: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-marketing.home-marketing'
+    >;
+  };
+}
+
 export interface ApiHomeMastheadHomeMasthead extends Struct.SingleTypeSchema {
   collectionName: 'home_mastheads';
   info: {
@@ -1023,6 +1055,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::footer.footer': ApiFooterFooter;
+      'api::home-marketing.home-marketing': ApiHomeMarketingHomeMarketing;
       'api::home-masthead.home-masthead': ApiHomeMastheadHomeMasthead;
       'api::product.product': ApiProductProduct;
       'api::test-item.test-item': ApiTestItemTestItem;
