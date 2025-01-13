@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_marketings",
+  "info": {
+    "singularName": "home-marketing",
+    "pluralName": "home-marketings",
+    "displayName": "HomeMarketing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading2": {
+      "type": "string"
+    },
+    "heading3": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    }
+  }
+}
