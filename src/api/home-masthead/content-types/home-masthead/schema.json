@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_mastheads",
+  "info": {
+    "singularName": "home-masthead",
+    "pluralName": "home-mastheads",
+    "displayName": "HomeMasthead",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button1Label": {
+      "type": "string"
+    },
+    "button2Label": {
+      "type": "string"
+    }
+  }
+}

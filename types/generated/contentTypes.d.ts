@@ -553,6 +553,37 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeMastheadHomeMasthead extends Struct.SingleTypeSchema {
+  collectionName: 'home_mastheads';
+  info: {
+    singularName: 'home-masthead';
+    pluralName: 'home-mastheads';
+    displayName: 'HomeMasthead';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    button1Label: Schema.Attribute.String;
+    button2Label: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-masthead.home-masthead'
+    >;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -992,6 +1023,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::footer.footer': ApiFooterFooter;
+      'api::home-masthead.home-masthead': ApiHomeMastheadHomeMasthead;
       'api::product.product': ApiProductProduct;
       'api::test-item.test-item': ApiTestItemTestItem;
       'admin::permission': AdminPermission;
