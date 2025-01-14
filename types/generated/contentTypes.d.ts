@@ -616,6 +616,66 @@ export interface ApiHomeMastheadHomeMasthead extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeNewsTopHomeNewsTop extends Struct.SingleTypeSchema {
+  collectionName: 'home_news_tops';
+  info: {
+    singularName: 'home-news-top';
+    pluralName: 'home-news-tops';
+    displayName: 'HomeNewsTop';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    topHeading: Schema.Attribute.String;
+    topParagraph: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-news-top.home-news-top'
+    >;
+  };
+}
+
+export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
+  collectionName: 'news_articles';
+  info: {
+    singularName: 'news-article';
+    pluralName: 'news-articles';
+    displayName: 'NewsArticle';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    storyImageUrl: Schema.Attribute.String;
+    storyHeading: Schema.Attribute.String;
+    storyBody: Schema.Attribute.Text;
+    authorInfo: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::news-article.news-article'
+    >;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1057,6 +1117,8 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::home-marketing.home-marketing': ApiHomeMarketingHomeMarketing;
       'api::home-masthead.home-masthead': ApiHomeMastheadHomeMasthead;
+      'api::home-news-top.home-news-top': ApiHomeNewsTopHomeNewsTop;
+      'api::news-article.news-article': ApiNewsArticleNewsArticle;
       'api::product.product': ApiProductProduct;
       'api::test-item.test-item': ApiTestItemTestItem;
       'admin::permission': AdminPermission;

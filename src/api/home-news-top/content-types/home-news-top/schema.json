@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_news_tops",
+  "info": {
+    "singularName": "home-news-top",
+    "pluralName": "home-news-tops",
+    "displayName": "HomeNewsTop",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "topHeading": {
+      "type": "string"
+    },
+    "topParagraph": {
+      "type": "text"
+    }
+  }
+}
