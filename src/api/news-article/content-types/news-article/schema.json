@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news_articles",
+  "info": {
+    "singularName": "news-article",
+    "pluralName": "news-articles",
+    "displayName": "NewsArticle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "storyImageUrl": {
+      "type": "string"
+    },
+    "storyHeading": {
+      "type": "string"
+    },
+    "storyBody": {
+      "type": "text"
+    },
+    "authorInfo": {
+      "type": "string"
+    }
+  }
+}
