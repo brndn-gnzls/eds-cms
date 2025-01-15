@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "getting_helps",
+  "info": {
+    "singularName": "getting-help",
+    "pluralName": "getting-helps",
+    "displayName": "GettingHelp",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "introParagraph": {
+      "type": "string"
+    },
+    "listItems": {
+      "type": "text"
+    },
+    "needHelpHeading": {
+      "type": "string"
+    },
+    "needHelpBody": {
+      "type": "text"
+    },
+    "feedbackForm": {
+      "type": "text"
+    },
+    "communityForums": {
+      "type": "text"
+    },
+    "emailUs": {
+      "type": "text"
+    },
+    "socialMedia": {
+      "type": "text"
+    }
+  }
+}

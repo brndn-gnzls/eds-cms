@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "getting_started_pages",
+  "info": {
+    "singularName": "getting-started-page",
+    "pluralName": "getting-started-pages",
+    "displayName": "GettingStartedPage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}
