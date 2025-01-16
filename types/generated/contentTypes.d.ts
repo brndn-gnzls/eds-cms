@@ -553,6 +553,37 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGetStartedBannerGetStartedBanner
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'get_started_banners';
+  info: {
+    singularName: 'get-started-banner';
+    pluralName: 'get-started-banners';
+    displayName: 'GetStartedBanner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::get-started-banner.get-started-banner'
+    >;
+  };
+}
+
 export interface ApiGettingHelpGettingHelp extends Struct.SingleTypeSchema {
   collectionName: 'getting_helps';
   info: {
@@ -1241,6 +1272,7 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::footer.footer': ApiFooterFooter;
+      'api::get-started-banner.get-started-banner': ApiGetStartedBannerGetStartedBanner;
       'api::getting-help.getting-help': ApiGettingHelpGettingHelp;
       'api::getting-started-page.getting-started-page': ApiGettingStartedPageGettingStartedPage;
       'api::getting-started-path.getting-started-path': ApiGettingStartedPathGettingStartedPath;
