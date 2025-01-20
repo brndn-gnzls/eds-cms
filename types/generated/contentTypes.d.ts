@@ -620,6 +620,39 @@ export interface ApiGettingHelpGettingHelp extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGettingStartedInternalGettingStartedInternal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'getting_started_internals';
+  info: {
+    singularName: 'getting-started-internal';
+    pluralName: 'getting-started-internals';
+    displayName: 'GettingStartedInternal';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Schema.Attribute.String;
+    bannerHeading: Schema.Attribute.String;
+    bannerBody: Schema.Attribute.Text;
+    bannerImage: Schema.Attribute.String;
+    tabs: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::getting-started-internal.getting-started-internal'
+    >;
+  };
+}
+
 export interface ApiGettingStartedPageGettingStartedPage
   extends Struct.SingleTypeSchema {
   collectionName: 'getting_started_pages';
@@ -1274,6 +1307,7 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::get-started-banner.get-started-banner': ApiGetStartedBannerGetStartedBanner;
       'api::getting-help.getting-help': ApiGettingHelpGettingHelp;
+      'api::getting-started-internal.getting-started-internal': ApiGettingStartedInternalGettingStartedInternal;
       'api::getting-started-page.getting-started-page': ApiGettingStartedPageGettingStartedPage;
       'api::getting-started-path.getting-started-path': ApiGettingStartedPathGettingStartedPath;
       'api::home-marketing.home-marketing': ApiHomeMarketingHomeMarketing;
