@@ -553,6 +553,167 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiGetStartedBannerGetStartedBanner
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'get_started_banners';
+  info: {
+    singularName: 'get-started-banner';
+    pluralName: 'get-started-banners';
+    displayName: 'GetStartedBanner';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::get-started-banner.get-started-banner'
+    >;
+  };
+}
+
+export interface ApiGettingHelpGettingHelp extends Struct.SingleTypeSchema {
+  collectionName: 'getting_helps';
+  info: {
+    singularName: 'getting-help';
+    pluralName: 'getting-helps';
+    displayName: 'GettingHelp';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    introParagraph: Schema.Attribute.String;
+    listItems: Schema.Attribute.Text;
+    needHelpHeading: Schema.Attribute.String;
+    needHelpBody: Schema.Attribute.Text;
+    feedbackForm: Schema.Attribute.Text;
+    communityForums: Schema.Attribute.Text;
+    emailUs: Schema.Attribute.Text;
+    socialMedia: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::getting-help.getting-help'
+    >;
+  };
+}
+
+export interface ApiGettingStartedInternalGettingStartedInternal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'getting_started_internals';
+  info: {
+    singularName: 'getting-started-internal';
+    pluralName: 'getting-started-internals';
+    displayName: 'GettingStartedInternal';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    slug: Schema.Attribute.String;
+    bannerHeading: Schema.Attribute.String;
+    bannerBody: Schema.Attribute.Text;
+    bannerImage: Schema.Attribute.String;
+    tabs: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::getting-started-internal.getting-started-internal'
+    >;
+  };
+}
+
+export interface ApiGettingStartedPageGettingStartedPage
+  extends Struct.SingleTypeSchema {
+  collectionName: 'getting_started_pages';
+  info: {
+    singularName: 'getting-started-page';
+    pluralName: 'getting-started-pages';
+    displayName: 'GettingStartedPage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::getting-started-page.getting-started-page'
+    >;
+  };
+}
+
+export interface ApiGettingStartedPathGettingStartedPath
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'getting_started_paths';
+  info: {
+    singularName: 'getting-started-path';
+    pluralName: 'getting-started-paths';
+    displayName: 'GettingStartedPath';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    icon: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::getting-started-path.getting-started-path'
+    >;
+  };
+}
+
 export interface ApiHomeMarketingHomeMarketing extends Struct.SingleTypeSchema {
   collectionName: 'home_marketings';
   info: {
@@ -641,6 +802,35 @@ export interface ApiHomeNewsTopHomeNewsTop extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::home-news-top.home-news-top'
+    >;
+  };
+}
+
+export interface ApiLeftRailAccordionLeftRailAccordion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'left_rail_accordions';
+  info: {
+    singularName: 'left-rail-accordion';
+    pluralName: 'left-rail-accordions';
+    displayName: 'LeftRailAccordions';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    links: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::left-rail-accordion.left-rail-accordion'
     >;
   };
 }
@@ -1115,9 +1305,15 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::footer.footer': ApiFooterFooter;
+      'api::get-started-banner.get-started-banner': ApiGetStartedBannerGetStartedBanner;
+      'api::getting-help.getting-help': ApiGettingHelpGettingHelp;
+      'api::getting-started-internal.getting-started-internal': ApiGettingStartedInternalGettingStartedInternal;
+      'api::getting-started-page.getting-started-page': ApiGettingStartedPageGettingStartedPage;
+      'api::getting-started-path.getting-started-path': ApiGettingStartedPathGettingStartedPath;
       'api::home-marketing.home-marketing': ApiHomeMarketingHomeMarketing;
       'api::home-masthead.home-masthead': ApiHomeMastheadHomeMasthead;
       'api::home-news-top.home-news-top': ApiHomeNewsTopHomeNewsTop;
+      'api::left-rail-accordion.left-rail-accordion': ApiLeftRailAccordionLeftRailAccordion;
       'api::news-article.news-article': ApiNewsArticleNewsArticle;
       'api::product.product': ApiProductProduct;
       'api::test-item.test-item': ApiTestItemTestItem;

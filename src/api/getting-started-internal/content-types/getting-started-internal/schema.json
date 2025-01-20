@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "getting_started_internals",
+  "info": {
+    "singularName": "getting-started-internal",
+    "pluralName": "getting-started-internals",
+    "displayName": "GettingStartedInternal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string"
+    },
+    "bannerHeading": {
+      "type": "string"
+    },
+    "bannerBody": {
+      "type": "text"
+    },
+    "bannerImage": {
+      "type": "string"
+    },
+    "tabs": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "left_rail_accordions",
+  "info": {
+    "singularName": "left-rail-accordion",
+    "pluralName": "left-rail-accordions",
+    "displayName": "LeftRailAccordions"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "links": {
+      "type": "text"
+    }
+  }
+}
