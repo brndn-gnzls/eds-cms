@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "general_h2_lockups",
+  "info": {
+    "singularName": "general-h2-lockup",
+    "pluralName": "general-h2-lockups",
+    "displayName": "GeneralH2Lockup",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "headline": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}
