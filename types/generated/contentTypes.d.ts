@@ -518,6 +518,67 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiComponentCatalogInventoryComponentCatalogInventory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'component_catalog_inventories';
+  info: {
+    singularName: 'component-catalog-inventory';
+    pluralName: 'component-catalog-inventories';
+    displayName: 'ComponentCatalogInventory';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    imageUrl: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::component-catalog-inventory.component-catalog-inventory'
+    >;
+  };
+}
+
+export interface ApiComponentCatalogMastheadComponentCatalogMasthead
+  extends Struct.SingleTypeSchema {
+  collectionName: 'component_catalog_mastheads';
+  info: {
+    singularName: 'component-catalog-masthead';
+    pluralName: 'component-catalog-mastheads';
+    displayName: 'ComponentCatalogMasthead';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Schema.Attribute.String;
+    body: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::component-catalog-masthead.component-catalog-masthead'
+    >;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -550,6 +611,36 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::footer.footer'>;
+  };
+}
+
+export interface ApiGeneralH2LockupGeneralH2Lockup
+  extends Struct.SingleTypeSchema {
+  collectionName: 'general_h2_lockups';
+  info: {
+    singularName: 'general-h2-lockup';
+    pluralName: 'general-h2-lockups';
+    displayName: 'GeneralH2Lockup';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    headline: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::general-h2-lockup.general-h2-lockup'
+    >;
   };
 }
 
@@ -1304,7 +1395,10 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
+      'api::component-catalog-inventory.component-catalog-inventory': ApiComponentCatalogInventoryComponentCatalogInventory;
+      'api::component-catalog-masthead.component-catalog-masthead': ApiComponentCatalogMastheadComponentCatalogMasthead;
       'api::footer.footer': ApiFooterFooter;
+      'api::general-h2-lockup.general-h2-lockup': ApiGeneralH2LockupGeneralH2Lockup;
       'api::get-started-banner.get-started-banner': ApiGetStartedBannerGetStartedBanner;
       'api::getting-help.getting-help': ApiGettingHelpGettingHelp;
       'api::getting-started-internal.getting-started-internal': ApiGettingStartedInternalGettingStartedInternal;
