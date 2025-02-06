@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_paragraph_block_paragraph_blocks",
+  "info": {
+    "displayName": "ParagraphBlock"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

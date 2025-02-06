@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "component_detail_pages",
+  "info": {
+    "singularName": "component-detail-page",
+    "pluralName": "component-detail-pages",
+    "displayName": "componentDetailPages",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
+    },
+    "Overview": {
+      "type": "dynamiczone",
+      "components": [
+        "heading-blocks.heading-block"
+      ]
+    },
+    "Usage": {
+      "type": "dynamiczone",
+      "components": [
+        "heading-blocks.heading-block"
+      ]
+    },
+    "Accessibility": {
+      "type": "dynamiczone",
+      "components": [
+        "heading-blocks.heading-block"
+      ]
+    }
+  }
+}

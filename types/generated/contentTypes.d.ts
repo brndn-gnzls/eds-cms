@@ -579,6 +579,41 @@ export interface ApiComponentCatalogMastheadComponentCatalogMasthead
   };
 }
 
+export interface ApiComponentDetailPageComponentDetailPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'component_detail_pages';
+  info: {
+    singularName: 'component-detail-page';
+    pluralName: 'component-detail-pages';
+    displayName: 'componentDetailPages';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    slug: Schema.Attribute.String & Schema.Attribute.Unique;
+    Overview: Schema.Attribute.DynamicZone<['heading-blocks.heading-block']>;
+    Usage: Schema.Attribute.DynamicZone<['heading-blocks.heading-block']>;
+    Accessibility: Schema.Attribute.DynamicZone<
+      ['heading-blocks.heading-block']
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::component-detail-page.component-detail-page'
+    >;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -1397,6 +1432,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::component-catalog-inventory.component-catalog-inventory': ApiComponentCatalogInventoryComponentCatalogInventory;
       'api::component-catalog-masthead.component-catalog-masthead': ApiComponentCatalogMastheadComponentCatalogMasthead;
+      'api::component-detail-page.component-detail-page': ApiComponentDetailPageComponentDetailPage;
       'api::footer.footer': ApiFooterFooter;
       'api::general-h2-lockup.general-h2-lockup': ApiGeneralH2LockupGeneralH2Lockup;
       'api::get-started-banner.get-started-banner': ApiGetStartedBannerGetStartedBanner;

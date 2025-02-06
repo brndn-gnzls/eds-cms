@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_rows_rows",
+  "info": {
+    "displayName": "Rows",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "componentName": {
+      "type": "string"
+    },
+    "accTest": {
+      "type": "string"
+    },
+    "accStatus": {
+      "type": "string"
+    }
+  }
+}
