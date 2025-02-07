@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_accessibility_blocks_table_rows",
+  "info": {
+    "displayName": "Table Row",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "componentName": {
+      "type": "string"
+    },
+    "test": {
+      "type": "string"
+    },
+    "componentStatus": {
+      "type": "string"
+    }
+  }
+}

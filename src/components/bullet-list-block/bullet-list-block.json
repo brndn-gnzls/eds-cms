@@ -1,7 +1,8 @@
 {
   "collectionName": "components_bullet_list_block_bullet_list_blocks",
   "info": {
-    "displayName": "BulletListBlock"
+    "displayName": "BulletListBlock",
+    "description": ""
   },
   "options": {},
   "attributes": {
