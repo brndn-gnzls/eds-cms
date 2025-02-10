@@ -595,7 +595,17 @@ export interface ApiComponentDetailPageComponentDetailPage
     title: Schema.Attribute.String;
     slug: Schema.Attribute.String & Schema.Attribute.Unique;
     Overview: Schema.Attribute.DynamicZone<['heading-blocks.heading-block']>;
-    Usage: Schema.Attribute.DynamicZone<['heading-blocks.heading-block']>;
+    Usage: Schema.Attribute.DynamicZone<
+      [
+        'heading-blocks.heading-block',
+        'paragraph-blocks.paragraph-block',
+        'spacing-blocks.spacing-block',
+        'shared-blocks.image-block',
+        'shared-blocks.horizontal-rule-block',
+        'shared-blocks.getting-help-internal-block',
+        'shared-blocks.italic-caption-small',
+      ]
+    >;
     Accessibility: Schema.Attribute.DynamicZone<
       [
         'heading-blocks.heading-block',
