@@ -10,16 +10,6 @@ export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
   };
 }
 
-export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
-  collectionName: 'components_spacing_blocks_spacing_blocks';
-  info: {
-    displayName: 'Spacing Block';
-  };
-  attributes: {
-    height: Schema.Attribute.Integer;
-  };
-}
-
 export interface SharedBlocksItalicCaptionSmall extends Struct.ComponentSchema {
   collectionName: 'components_shared_blocks_italic_caption_smalls';
   info: {
@@ -61,6 +51,16 @@ export interface SharedBlocksGettingHelpInternalBlock
   };
   attributes: {
     insert: Schema.Attribute.String;
+  };
+}
+
+export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
+  collectionName: 'components_spacing_blocks_spacing_blocks';
+  info: {
+    displayName: 'Spacing Block';
+  };
+  attributes: {
+    height: Schema.Attribute.Integer;
   };
 }
 
@@ -109,6 +109,17 @@ export interface HeadingBlocksHeadingBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface BulletListBlockBulletListBlock extends Struct.ComponentSchema {
+  collectionName: 'components_bullet_list_block_bullet_list_blocks';
+  info: {
+    displayName: 'BulletListBlock';
+    description: '';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'bullet-list-block-items.items', true>;
+  };
+}
+
 export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
   collectionName: 'components_bullet_list_block_items_items';
   info: {
@@ -118,17 +129,6 @@ export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
   attributes: {
     boldLead: Schema.Attribute.String;
     body: Schema.Attribute.Text;
-  };
-}
-
-export interface BulletListBlockBulletListBlock extends Struct.ComponentSchema {
-  collectionName: 'components_bullet_list_block_bullet_list_blocks';
-  info: {
-    displayName: 'BulletListBlock';
-    description: '';
-  };
-  attributes: {
-    items: Schema.Attribute.Component<'bullet-list-block-items.items', true>;
   };
 }
 
@@ -185,17 +185,17 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'spacing-block.spacing-block': SpacingBlockSpacingBlock;
-      'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
       'shared-blocks.italic-caption-small': SharedBlocksItalicCaptionSmall;
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
+      'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
       'rows.rows': RowsRows;
       'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'horizontal-rule-block.horizontal-rule-block': HorizontalRuleBlockHorizontalRuleBlock;
       'heading-blocks.heading-block': HeadingBlocksHeadingBlock;
-      'bullet-list-block-items.items': BulletListBlockItemsItems;
       'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
+      'bullet-list-block-items.items': BulletListBlockItemsItems;
       'accessibility-table-block.accessibility-table-block': AccessibilityTableBlockAccessibilityTableBlock;
       'accessibility-blocks.table-row': AccessibilityBlocksTableRow;
       'accessibility-blocks.paragraph-block': AccessibilityBlocksParagraphBlock;
