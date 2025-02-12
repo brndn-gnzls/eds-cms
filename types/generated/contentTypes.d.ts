@@ -604,6 +604,7 @@ export interface ApiComponentDetailPageComponentDetailPage
         'shared-blocks.getting-help-internal-block',
         'paragraph-blocks.paragraph-block',
         'bullet-list-block.bullet-list-block',
+        'icons.bullet-list-icon',
       ]
     >;
     Usage: Schema.Attribute.DynamicZone<
