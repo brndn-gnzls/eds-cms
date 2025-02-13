@@ -30,7 +30,8 @@
         "shared-blocks.getting-help-internal-block",
         "paragraph-blocks.paragraph-block",
         "bullet-list-block.bullet-list-block",
-        "icons.bullet-list-icon"
+        "icons.bullet-list-icon",
+        "grids.image-headline-copy-grid"
       ]
     },
     "Usage": {

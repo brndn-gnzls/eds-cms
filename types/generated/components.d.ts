@@ -64,6 +64,16 @@ export interface SharedBlocksGettingHelpInternalBlock
   };
 }
 
+export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
+  collectionName: 'components_paragraph_blocks_paragraph_blocks';
+  info: {
+    displayName: 'Paragraph Block';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+  };
+}
+
 export interface RowsRows extends Struct.ComponentSchema {
   collectionName: 'components_rows_rows';
   info: {
@@ -84,16 +94,6 @@ export interface IconsBulletListIcon extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.String;
-  };
-}
-
-export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
-  collectionName: 'components_paragraph_blocks_paragraph_blocks';
-  info: {
-    displayName: 'Paragraph Block';
-  };
-  attributes: {
-    content: Schema.Attribute.Text;
   };
 }
 
@@ -128,6 +128,30 @@ export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
   attributes: {
     boldLead: Schema.Attribute.String;
     body: Schema.Attribute.Text;
+  };
+}
+
+export interface GridsImageSrc extends Struct.ComponentSchema {
+  collectionName: 'components_grids_image_srcs';
+  info: {
+    displayName: 'Grid Content';
+    description: '';
+  };
+  attributes: {
+    imageSrc: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+  };
+}
+
+export interface GridsImageHeadlineCopyGrid extends Struct.ComponentSchema {
+  collectionName: 'components_grids_image_headline_copy_grids';
+  info: {
+    displayName: 'Image Headline Copy Grid';
+    description: '';
+  };
+  attributes: {
+    appearanceData: Schema.Attribute.Component<'grids.image-src', true>;
   };
 }
 
@@ -200,12 +224,14 @@ declare module '@strapi/strapi' {
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
+      'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'rows.rows': RowsRows;
       'icons.bullet-list-icon': IconsBulletListIcon;
-      'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'horizontal-rule-block.horizontal-rule-block': HorizontalRuleBlockHorizontalRuleBlock;
       'heading-blocks.heading-block': HeadingBlocksHeadingBlock;
       'bullet-list-block-items.items': BulletListBlockItemsItems;
+      'grids.image-src': GridsImageSrc;
+      'grids.image-headline-copy-grid': GridsImageHeadlineCopyGrid;
       'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
       'accessibility-table-block.accessibility-table-block': AccessibilityTableBlockAccessibilityTableBlock;
       'accessibility-blocks.table-row': AccessibilityBlocksTableRow;
