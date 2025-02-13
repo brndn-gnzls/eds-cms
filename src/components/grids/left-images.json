@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_grids_left_images",
+  "info": {
+    "displayName": "leftImages",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "src": {
+      "type": "string"
+    }
+  }
+}

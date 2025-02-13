@@ -64,16 +64,6 @@ export interface SharedBlocksGettingHelpInternalBlock
   };
 }
 
-export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
-  collectionName: 'components_paragraph_blocks_paragraph_blocks';
-  info: {
-    displayName: 'Paragraph Block';
-  };
-  attributes: {
-    content: Schema.Attribute.Text;
-  };
-}
-
 export interface RowsRows extends Struct.ComponentSchema {
   collectionName: 'components_rows_rows';
   info: {
@@ -84,6 +74,16 @@ export interface RowsRows extends Struct.ComponentSchema {
     componentName: Schema.Attribute.String;
     accTest: Schema.Attribute.String;
     accStatus: Schema.Attribute.String;
+  };
+}
+
+export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
+  collectionName: 'components_paragraph_blocks_paragraph_blocks';
+  info: {
+    displayName: 'Paragraph Block';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
   };
 }
 
@@ -119,15 +119,40 @@ export interface HeadingBlocksHeadingBlock extends Struct.ComponentSchema {
   };
 }
 
-export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
-  collectionName: 'components_bullet_list_block_items_items';
+export interface GridsStatesSectionBlock extends Struct.ComponentSchema {
+  collectionName: 'components_grids_states_section_blocks';
   info: {
-    displayName: 'items';
+    displayName: 'States Section Block';
     description: '';
   };
   attributes: {
-    boldLead: Schema.Attribute.String;
-    body: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    introParagraph: Schema.Attribute.Text;
+    leftImages: Schema.Attribute.Component<'grids.left-images', true>;
+    rightStates: Schema.Attribute.Component<'grids.right-states', true>;
+  };
+}
+
+export interface GridsRightStates extends Struct.ComponentSchema {
+  collectionName: 'components_grids_right_states';
+  info: {
+    displayName: 'rightStates';
+    description: '';
+  };
+  attributes: {
+    boldTitle: Schema.Attribute.String;
+    paragraph: Schema.Attribute.Text;
+  };
+}
+
+export interface GridsLeftImages extends Struct.ComponentSchema {
+  collectionName: 'components_grids_left_images';
+  info: {
+    displayName: 'leftImages';
+    description: '';
+  };
+  attributes: {
+    src: Schema.Attribute.String;
   };
 }
 
@@ -152,6 +177,18 @@ export interface GridsImageHeadlineCopyGrid extends Struct.ComponentSchema {
   };
   attributes: {
     appearanceData: Schema.Attribute.Component<'grids.image-src', true>;
+  };
+}
+
+export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
+  collectionName: 'components_bullet_list_block_items_items';
+  info: {
+    displayName: 'items';
+    description: '';
+  };
+  attributes: {
+    boldLead: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
   };
 }
 
@@ -224,14 +261,17 @@ declare module '@strapi/strapi' {
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
-      'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'rows.rows': RowsRows;
+      'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'icons.bullet-list-icon': IconsBulletListIcon;
       'horizontal-rule-block.horizontal-rule-block': HorizontalRuleBlockHorizontalRuleBlock;
       'heading-blocks.heading-block': HeadingBlocksHeadingBlock;
-      'bullet-list-block-items.items': BulletListBlockItemsItems;
+      'grids.states-section-block': GridsStatesSectionBlock;
+      'grids.right-states': GridsRightStates;
+      'grids.left-images': GridsLeftImages;
       'grids.image-src': GridsImageSrc;
       'grids.image-headline-copy-grid': GridsImageHeadlineCopyGrid;
+      'bullet-list-block-items.items': BulletListBlockItemsItems;
       'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
       'accessibility-table-block.accessibility-table-block': AccessibilityTableBlockAccessibilityTableBlock;
       'accessibility-blocks.table-row': AccessibilityBlocksTableRow;
