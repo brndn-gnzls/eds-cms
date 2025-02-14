@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_overview_blocks_table_headings",
+  "info": {
+    "displayName": "tableHeadings"
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

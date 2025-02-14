@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_overview_blocks_size_section_blocks",
+  "info": {
+    "displayName": "Size Section Block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "introParagraph": {
+      "type": "text"
+    },
+    "imageSrc": {
+      "type": "string"
+    },
+    "italicParagraph": {
+      "type": "text"
+    },
+    "tableHeadings": {
+      "displayName": "tableHeadings",
+      "type": "component",
+      "repeatable": true,
+      "component": "overview-blocks.table-headings"
+    },
+    "tableRows": {
+      "type": "component",
+      "repeatable": true,
+      "component": "overview-blocks.table-rows"
+    }
+  }
+}

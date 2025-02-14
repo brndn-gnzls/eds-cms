@@ -1,5 +1,15 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
+export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
+  collectionName: 'components_spacing_block_spacing_blocks';
+  info: {
+    displayName: 'SpacingBlock';
+  };
+  attributes: {
+    height: Schema.Attribute.Integer;
+  };
+}
+
 export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
   collectionName: 'components_spacing_blocks_spacing_blocks';
   info: {
@@ -10,13 +20,13 @@ export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
   };
 }
 
-export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
-  collectionName: 'components_spacing_block_spacing_blocks';
+export interface SharedBlocksParagraphHeadline extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blocks_paragraph_headlines';
   info: {
-    displayName: 'SpacingBlock';
+    displayName: 'ParagraphHeadline';
   };
   attributes: {
-    height: Schema.Attribute.Integer;
+    headline: Schema.Attribute.String;
   };
 }
 
@@ -64,6 +74,16 @@ export interface SharedBlocksGettingHelpInternalBlock
   };
 }
 
+export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
+  collectionName: 'components_paragraph_blocks_paragraph_blocks';
+  info: {
+    displayName: 'Paragraph Block';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+  };
+}
+
 export interface RowsRows extends Struct.ComponentSchema {
   collectionName: 'components_rows_rows';
   info: {
@@ -77,13 +97,53 @@ export interface RowsRows extends Struct.ComponentSchema {
   };
 }
 
-export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
-  collectionName: 'components_paragraph_blocks_paragraph_blocks';
+export interface OverviewBlocksTableRows extends Struct.ComponentSchema {
+  collectionName: 'components_overview_blocks_table_rows';
   info: {
-    displayName: 'Paragraph Block';
+    displayName: 'tableRows';
   };
   attributes: {
-    content: Schema.Attribute.Text;
+    size: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
+    metrics: Schema.Attribute.Text;
+  };
+}
+
+export interface OverviewBlocksTableHeadings extends Struct.ComponentSchema {
+  collectionName: 'components_overview_blocks_table_headings';
+  info: {
+    displayName: 'tableHeadings';
+  };
+  attributes: {
+    size: Schema.Attribute.String;
+    description: Schema.Attribute.String;
+  };
+}
+
+export interface OverviewBlocksTableHead extends Struct.ComponentSchema {
+  collectionName: 'components_overview_blocks_table_heads';
+  info: {
+    displayName: 'tableHead';
+  };
+  attributes: {};
+}
+
+export interface OverviewBlocksSizeSectionBlock extends Struct.ComponentSchema {
+  collectionName: 'components_overview_blocks_size_section_blocks';
+  info: {
+    displayName: 'Size Section Block';
+    description: '';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    introParagraph: Schema.Attribute.Text;
+    imageSrc: Schema.Attribute.String;
+    italicParagraph: Schema.Attribute.Text;
+    tableHeadings: Schema.Attribute.Component<
+      'overview-blocks.table-headings',
+      true
+    >;
+    tableRows: Schema.Attribute.Component<'overview-blocks.table-rows', true>;
   };
 }
 
@@ -145,6 +205,41 @@ export interface GridsRightStates extends Struct.ComponentSchema {
   };
 }
 
+export interface GridsMetricsRow extends Struct.ComponentSchema {
+  collectionName: 'components_grids_metrics_rows';
+  info: {
+    displayName: 'Metrics Row';
+    description: '';
+  };
+  attributes: {
+    imageSrc: Schema.Attribute.String;
+    boldTitle: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    topSpacing: Schema.Attribute.Integer;
+    bulletList: Schema.Attribute.Component<
+      'bullet-list-block.bullet-list-block',
+      true
+    >;
+    postBulletParagraph: Schema.Attribute.Text;
+  };
+}
+
+export interface GridsMetricSectionBlock extends Struct.ComponentSchema {
+  collectionName: 'components_grids_metric_section_blocks';
+  info: {
+    displayName: 'Metric Section Block';
+    description: '';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    introParagraph: Schema.Attribute.Text;
+    row1Left: Schema.Attribute.Component<'grids.metrics-row', true>;
+    row1Right: Schema.Attribute.Component<'grids.metrics-row', true>;
+    row2Left: Schema.Attribute.Component<'grids.metrics-row', true>;
+    row2Right: Schema.Attribute.Component<'grids.metrics-row', true>;
+  };
+}
+
 export interface GridsLeftImages extends Struct.ComponentSchema {
   collectionName: 'components_grids_left_images';
   info: {
@@ -177,6 +272,25 @@ export interface GridsImageHeadlineCopyGrid extends Struct.ComponentSchema {
   };
   attributes: {
     appearanceData: Schema.Attribute.Component<'grids.image-src', true>;
+  };
+}
+
+export interface GridsImageHeadlineCopyBulletGrid
+  extends Struct.ComponentSchema {
+  collectionName: 'components_grids_image_headline_copy_bullet_grids';
+  info: {
+    displayName: 'Image Headline Copy Bullet Grid';
+    description: '';
+  };
+  attributes: {
+    imageHeadlineCopy: Schema.Attribute.Component<
+      'grids.image-headline-copy-grid',
+      true
+    >;
+    bulletList: Schema.Attribute.Component<
+      'bullet-list-block.bullet-list-block',
+      true
+    >;
   };
 }
 
@@ -255,22 +369,30 @@ export interface AccessibilityBlocksAccessibilityTableBlock
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
       'spacing-block.spacing-block': SpacingBlockSpacingBlock;
+      'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
+      'shared-blocks.paragraph-headline': SharedBlocksParagraphHeadline;
       'shared-blocks.italic-caption-small': SharedBlocksItalicCaptionSmall;
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
-      'rows.rows': RowsRows;
       'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
+      'rows.rows': RowsRows;
+      'overview-blocks.table-rows': OverviewBlocksTableRows;
+      'overview-blocks.table-headings': OverviewBlocksTableHeadings;
+      'overview-blocks.table-head': OverviewBlocksTableHead;
+      'overview-blocks.size-section-block': OverviewBlocksSizeSectionBlock;
       'icons.bullet-list-icon': IconsBulletListIcon;
       'horizontal-rule-block.horizontal-rule-block': HorizontalRuleBlockHorizontalRuleBlock;
       'heading-blocks.heading-block': HeadingBlocksHeadingBlock;
       'grids.states-section-block': GridsStatesSectionBlock;
       'grids.right-states': GridsRightStates;
+      'grids.metrics-row': GridsMetricsRow;
+      'grids.metric-section-block': GridsMetricSectionBlock;
       'grids.left-images': GridsLeftImages;
       'grids.image-src': GridsImageSrc;
       'grids.image-headline-copy-grid': GridsImageHeadlineCopyGrid;
+      'grids.image-headline-copy-bullet-grid': GridsImageHeadlineCopyBulletGrid;
       'bullet-list-block-items.items': BulletListBlockItemsItems;
       'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
       'accessibility-table-block.accessibility-table-block': AccessibilityTableBlockAccessibilityTableBlock;

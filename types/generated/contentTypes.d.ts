@@ -607,6 +607,10 @@ export interface ApiComponentDetailPageComponentDetailPage
         'icons.bullet-list-icon',
         'grids.image-headline-copy-grid',
         'grids.states-section-block',
+        'overview-blocks.size-section-block',
+        'shared-blocks.paragraph-headline',
+        'grids.image-headline-copy-bullet-grid',
+        'grids.metric-section-block',
       ]
     >;
     Usage: Schema.Attribute.DynamicZone<

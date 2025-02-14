@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_grids_metrics_rows",
+  "info": {
+    "displayName": "Metrics Row",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imageSrc": {
+      "type": "string"
+    },
+    "boldTitle": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "topSpacing": {
+      "type": "integer"
+    },
+    "bulletList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bullet-list-block.bullet-list-block"
+    },
+    "postBulletParagraph": {
+      "type": "text"
+    }
+  }
+}

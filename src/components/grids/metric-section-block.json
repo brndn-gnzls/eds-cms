@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_grids_metric_section_blocks",
+  "info": {
+    "displayName": "Metric Section Block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "introParagraph": {
+      "type": "text"
+    },
+    "row1Left": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grids.metrics-row"
+    },
+    "row1Right": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grids.metrics-row"
+    },
+    "row2Left": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grids.metrics-row"
+    },
+    "row2Right": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grids.metrics-row"
+    }
+  }
+}
