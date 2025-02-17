@@ -1,19 +1,19 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
-  collectionName: 'components_spacing_block_spacing_blocks';
+export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
+  collectionName: 'components_spacing_blocks_spacing_blocks';
   info: {
-    displayName: 'SpacingBlock';
+    displayName: 'Spacing Block';
   };
   attributes: {
     height: Schema.Attribute.Integer;
   };
 }
 
-export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
-  collectionName: 'components_spacing_blocks_spacing_blocks';
+export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
+  collectionName: 'components_spacing_block_spacing_blocks';
   info: {
-    displayName: 'Spacing Block';
+    displayName: 'SpacingBlock';
   };
   attributes: {
     height: Schema.Attribute.Integer;
@@ -74,16 +74,6 @@ export interface SharedBlocksGettingHelpInternalBlock
   };
 }
 
-export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
-  collectionName: 'components_paragraph_blocks_paragraph_blocks';
-  info: {
-    displayName: 'Paragraph Block';
-  };
-  attributes: {
-    content: Schema.Attribute.Text;
-  };
-}
-
 export interface RowsRows extends Struct.ComponentSchema {
   collectionName: 'components_rows_rows';
   info: {
@@ -94,6 +84,16 @@ export interface RowsRows extends Struct.ComponentSchema {
     componentName: Schema.Attribute.String;
     accTest: Schema.Attribute.String;
     accStatus: Schema.Attribute.String;
+  };
+}
+
+export interface ParagraphBlocksParagraphBlock extends Struct.ComponentSchema {
+  collectionName: 'components_paragraph_blocks_paragraph_blocks';
+  info: {
+    displayName: 'Paragraph Block';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
   };
 }
 
@@ -294,15 +294,60 @@ export interface GridsImageHeadlineCopyBulletGrid
   };
 }
 
-export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
-  collectionName: 'components_bullet_list_block_items_items';
+export interface GridsDontItems extends Struct.ComponentSchema {
+  collectionName: 'components_grids_dont_items';
   info: {
-    displayName: 'items';
+    displayName: 'dontItems';
     description: '';
   };
   attributes: {
-    boldLead: Schema.Attribute.String;
-    body: Schema.Attribute.Text;
+    bestPracticeItem: Schema.Attribute.Component<
+      'grids.best-practice-item',
+      true
+    >;
+  };
+}
+
+export interface GridsDoItems extends Struct.ComponentSchema {
+  collectionName: 'components_grids_do_items';
+  info: {
+    displayName: 'doItems';
+    description: '';
+  };
+  attributes: {
+    bestPracticeItem: Schema.Attribute.Component<
+      'grids.best-practice-item',
+      true
+    >;
+  };
+}
+
+export interface GridsBestPracticesSectionBlock extends Struct.ComponentSchema {
+  collectionName: 'components_grids_best_practices_section_blocks';
+  info: {
+    displayName: 'Best Practices Section Block';
+    description: '';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    introParagraph: Schema.Attribute.Text;
+    doItems: Schema.Attribute.Component<'grids.do-items', true>;
+    dontItems: Schema.Attribute.Component<'grids.dont-items', true>;
+  };
+}
+
+export interface GridsBestPracticeItem extends Struct.ComponentSchema {
+  collectionName: 'components_grids_best_practice_items';
+  info: {
+    displayName: 'Best Practice Item';
+    description: '';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    color: Schema.Attribute.String;
+    symbol: Schema.Attribute.String;
+    paragraph: Schema.Attribute.Text;
+    imageSrc: Schema.Attribute.String;
   };
 }
 
@@ -314,6 +359,18 @@ export interface BulletListBlockBulletListBlock extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'bullet-list-block-items.items', true>;
+  };
+}
+
+export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
+  collectionName: 'components_bullet_list_block_items_items';
+  info: {
+    displayName: 'items';
+    description: '';
+  };
+  attributes: {
+    boldLead: Schema.Attribute.String;
+    body: Schema.Attribute.Text;
   };
 }
 
@@ -369,15 +426,15 @@ export interface AccessibilityBlocksAccessibilityTableBlock
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'spacing-block.spacing-block': SpacingBlockSpacingBlock;
       'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
+      'spacing-block.spacing-block': SpacingBlockSpacingBlock;
       'shared-blocks.paragraph-headline': SharedBlocksParagraphHeadline;
       'shared-blocks.italic-caption-small': SharedBlocksItalicCaptionSmall;
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
-      'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'rows.rows': RowsRows;
+      'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'overview-blocks.table-rows': OverviewBlocksTableRows;
       'overview-blocks.table-headings': OverviewBlocksTableHeadings;
       'overview-blocks.table-head': OverviewBlocksTableHead;
@@ -393,8 +450,12 @@ declare module '@strapi/strapi' {
       'grids.image-src': GridsImageSrc;
       'grids.image-headline-copy-grid': GridsImageHeadlineCopyGrid;
       'grids.image-headline-copy-bullet-grid': GridsImageHeadlineCopyBulletGrid;
-      'bullet-list-block-items.items': BulletListBlockItemsItems;
+      'grids.dont-items': GridsDontItems;
+      'grids.do-items': GridsDoItems;
+      'grids.best-practices-section-block': GridsBestPracticesSectionBlock;
+      'grids.best-practice-item': GridsBestPracticeItem;
       'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
+      'bullet-list-block-items.items': BulletListBlockItemsItems;
       'accessibility-table-block.accessibility-table-block': AccessibilityTableBlockAccessibilityTableBlock;
       'accessibility-blocks.table-row': AccessibilityBlocksTableRow;
       'accessibility-blocks.paragraph-block': AccessibilityBlocksParagraphBlock;

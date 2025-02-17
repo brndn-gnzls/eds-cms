@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_grids_best_practice_items",
+  "info": {
+    "displayName": "Best Practice Item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    },
+    "symbol": {
+      "type": "string"
+    },
+    "paragraph": {
+      "type": "text"
+    },
+    "imageSrc": {
+      "type": "string"
+    }
+  }
+}

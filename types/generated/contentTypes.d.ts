@@ -611,6 +611,7 @@ export interface ApiComponentDetailPageComponentDetailPage
         'shared-blocks.paragraph-headline',
         'grids.image-headline-copy-bullet-grid',
         'grids.metric-section-block',
+        'grids.best-practices-section-block',
       ]
     >;
     Usage: Schema.Attribute.DynamicZone<
