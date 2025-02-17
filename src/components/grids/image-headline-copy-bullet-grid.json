@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_grids_image_headline_copy_bullet_grids",
+  "info": {
+    "displayName": "Image Headline Copy Bullet Grid",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imageHeadlineCopy": {
+      "type": "component",
+      "repeatable": true,
+      "component": "grids.image-headline-copy-grid"
+    },
+    "bulletList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "bullet-list-block.bullet-list-block"
+    }
+  }
+}

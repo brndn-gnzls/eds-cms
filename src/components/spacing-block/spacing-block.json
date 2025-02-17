@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_spacing_block_spacing_blocks",
+  "info": {
+    "displayName": "SpacingBlock"
+  },
+  "options": {},
+  "attributes": {
+    "height": {
+      "type": "integer"
+    }
+  }
+}

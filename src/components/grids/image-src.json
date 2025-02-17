@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_grids_image_srcs",
+  "info": {
+    "displayName": "Grid Content",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imageSrc": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

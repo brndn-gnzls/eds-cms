@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_icons_bullet_list_icons",
+  "info": {
+    "displayName": "Bullet List Icon"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "string"
+    }
+  }
+}

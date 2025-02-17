@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_shared_blocks_italic_caption_smalls",
+  "info": {
+    "displayName": "Italic Caption Small"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

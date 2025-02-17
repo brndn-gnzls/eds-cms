@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_bullet_list_block_bullet_list_blocks",
+  "info": {
+    "displayName": "BulletListBlock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "displayName": "items",
+      "type": "component",
+      "repeatable": true,
+      "component": "bullet-list-block-items.items"
+    }
+  }
+}

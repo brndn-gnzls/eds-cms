@@ -579,6 +579,78 @@ export interface ApiComponentCatalogMastheadComponentCatalogMasthead
   };
 }
 
+export interface ApiComponentDetailPageComponentDetailPage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'component_detail_pages';
+  info: {
+    singularName: 'component-detail-page';
+    pluralName: 'component-detail-pages';
+    displayName: 'componentDetailPages';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    slug: Schema.Attribute.String & Schema.Attribute.Unique;
+    Overview: Schema.Attribute.DynamicZone<
+      [
+        'heading-blocks.heading-block',
+        'spacing-blocks.spacing-block',
+        'shared-blocks.italic-caption-small',
+        'shared-blocks.image-block',
+        'shared-blocks.horizontal-rule-block',
+        'shared-blocks.getting-help-internal-block',
+        'paragraph-blocks.paragraph-block',
+        'bullet-list-block.bullet-list-block',
+        'icons.bullet-list-icon',
+        'grids.image-headline-copy-grid',
+        'grids.states-section-block',
+        'overview-blocks.size-section-block',
+        'shared-blocks.paragraph-headline',
+        'grids.image-headline-copy-bullet-grid',
+        'grids.metric-section-block',
+        'grids.best-practices-section-block',
+      ]
+    >;
+    Usage: Schema.Attribute.DynamicZone<
+      [
+        'heading-blocks.heading-block',
+        'paragraph-blocks.paragraph-block',
+        'spacing-blocks.spacing-block',
+        'shared-blocks.image-block',
+        'shared-blocks.horizontal-rule-block',
+        'shared-blocks.getting-help-internal-block',
+        'shared-blocks.italic-caption-small',
+      ]
+    >;
+    Accessibility: Schema.Attribute.DynamicZone<
+      [
+        'heading-blocks.heading-block',
+        'paragraph-blocks.paragraph-block',
+        'spacing-blocks.spacing-block',
+        'accessibility-blocks.accessibility-table-block',
+        'bullet-list-block.bullet-list-block',
+        'shared-blocks.horizontal-rule-block',
+        'shared-blocks.getting-help-internal-block',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::component-detail-page.component-detail-page'
+    >;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -1397,6 +1469,7 @@ declare module '@strapi/strapi' {
       'api::article.article': ApiArticleArticle;
       'api::component-catalog-inventory.component-catalog-inventory': ApiComponentCatalogInventoryComponentCatalogInventory;
       'api::component-catalog-masthead.component-catalog-masthead': ApiComponentCatalogMastheadComponentCatalogMasthead;
+      'api::component-detail-page.component-detail-page': ApiComponentDetailPageComponentDetailPage;
       'api::footer.footer': ApiFooterFooter;
       'api::general-h2-lockup.general-h2-lockup': ApiGeneralH2LockupGeneralH2Lockup;
       'api::get-started-banner.get-started-banner': ApiGetStartedBannerGetStartedBanner;
