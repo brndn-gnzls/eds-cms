@@ -351,17 +351,6 @@ export interface GridsBestPracticeItem extends Struct.ComponentSchema {
   };
 }
 
-export interface BulletListBlockBulletListBlock extends Struct.ComponentSchema {
-  collectionName: 'components_bullet_list_block_bullet_list_blocks';
-  info: {
-    displayName: 'BulletListBlock';
-    description: '';
-  };
-  attributes: {
-    items: Schema.Attribute.Component<'bullet-list-block-items.items', true>;
-  };
-}
-
 export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
   collectionName: 'components_bullet_list_block_items_items';
   info: {
@@ -371,6 +360,17 @@ export interface BulletListBlockItemsItems extends Struct.ComponentSchema {
   attributes: {
     boldLead: Schema.Attribute.String;
     body: Schema.Attribute.Text;
+  };
+}
+
+export interface BulletListBlockBulletListBlock extends Struct.ComponentSchema {
+  collectionName: 'components_bullet_list_block_bullet_list_blocks';
+  info: {
+    displayName: 'BulletListBlock';
+    description: '';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'bullet-list-block-items.items', true>;
   };
 }
 
@@ -454,8 +454,8 @@ declare module '@strapi/strapi' {
       'grids.do-items': GridsDoItems;
       'grids.best-practices-section-block': GridsBestPracticesSectionBlock;
       'grids.best-practice-item': GridsBestPracticeItem;
-      'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
       'bullet-list-block-items.items': BulletListBlockItemsItems;
+      'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
       'accessibility-table-block.accessibility-table-block': AccessibilityTableBlockAccessibilityTableBlock;
       'accessibility-blocks.table-row': AccessibilityBlocksTableRow;
       'accessibility-blocks.paragraph-block': AccessibilityBlocksParagraphBlock;
