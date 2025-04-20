@@ -1,20 +1,20 @@
-// import type { Core } from '@strapi/strapi';
-
 export default {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  async bootstrap({ strapi }) {
+    console.log("Removing existing admin user(s)...");
 
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
-   */
-  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+    const userEmail = "wes.gonzales@elevancehealth.com";
+
+    const existingUser = await strapi.db.query("admin::user").findOne({
+      where: { email: userEmail },
+    });
+
+    if (existingUser) {
+      await strapi.db.query("admin::user").delete({
+        where: { id: existingUser.id },
+      });
+      console.log(`Deleted admin user with email '${userEmail}'.`);
+    } else {
+      console.log(`No admin user found with email '${userEmail}'.`);
+    }
+  },
 };
