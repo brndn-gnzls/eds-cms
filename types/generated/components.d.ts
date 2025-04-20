@@ -10,6 +10,29 @@ export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
+  collectionName: 'components_spacing_block_spacing_blocks';
+  info: {
+    displayName: 'SpacingBlock';
+  };
+  attributes: {
+    height: Schema.Attribute.Integer;
+  };
+}
+
+export interface RowsRows extends Struct.ComponentSchema {
+  collectionName: 'components_rows_rows';
+  info: {
+    displayName: 'Rows';
+    description: '';
+  };
+  attributes: {
+    componentName: Schema.Attribute.String;
+    accTest: Schema.Attribute.String;
+    accStatus: Schema.Attribute.String;
+  };
+}
+
 export interface SharedBlocksParagraphHeadline extends Struct.ComponentSchema {
   collectionName: 'components_shared_blocks_paragraph_headlines';
   info: {
@@ -61,29 +84,6 @@ export interface SharedBlocksGettingHelpInternalBlock
   };
   attributes: {
     insert: Schema.Attribute.String;
-  };
-}
-
-export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
-  collectionName: 'components_spacing_block_spacing_blocks';
-  info: {
-    displayName: 'SpacingBlock';
-  };
-  attributes: {
-    height: Schema.Attribute.Integer;
-  };
-}
-
-export interface RowsRows extends Struct.ComponentSchema {
-  collectionName: 'components_rows_rows';
-  info: {
-    displayName: 'Rows';
-    description: '';
-  };
-  attributes: {
-    componentName: Schema.Attribute.String;
-    accTest: Schema.Attribute.String;
-    accStatus: Schema.Attribute.String;
   };
 }
 
@@ -437,13 +437,13 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
+      'spacing-block.spacing-block': SpacingBlockSpacingBlock;
+      'rows.rows': RowsRows;
       'shared-blocks.paragraph-headline': SharedBlocksParagraphHeadline;
       'shared-blocks.italic-caption-small': SharedBlocksItalicCaptionSmall;
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
-      'spacing-block.spacing-block': SpacingBlockSpacingBlock;
-      'rows.rows': RowsRows;
       'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'overview-blocks.table-rows': OverviewBlocksTableRows;
       'overview-blocks.table-headings': OverviewBlocksTableHeadings;
