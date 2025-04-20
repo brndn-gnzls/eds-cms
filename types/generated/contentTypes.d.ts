@@ -482,6 +482,11 @@ export interface PluginUsersPermissionsUser
       'oneToMany',
       'plugin::users-permissions.user'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -515,6 +520,11 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::article.article'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -546,6 +556,11 @@ export interface ApiComponentCatalogInventoryComponentCatalogInventory
       'oneToMany',
       'api::component-catalog-inventory.component-catalog-inventory'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -576,6 +591,11 @@ export interface ApiComponentCatalogMastheadComponentCatalogMasthead
       'oneToMany',
       'api::component-catalog-masthead.component-catalog-masthead'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -612,6 +632,7 @@ export interface ApiComponentDetailPageComponentDetailPage
         'grids.image-headline-copy-bullet-grid',
         'grids.metric-section-block',
         'grids.best-practices-section-block',
+        'custom-blocks.storybook-module',
       ]
     >;
     Usage: Schema.Attribute.DynamicZone<
@@ -648,6 +669,11 @@ export interface ApiComponentDetailPageComponentDetailPage
       'oneToMany',
       'api::component-detail-page.component-detail-page'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -683,6 +709,11 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::footer.footer'>;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -713,6 +744,11 @@ export interface ApiGeneralH2LockupGeneralH2Lockup
       'oneToMany',
       'api::general-h2-lockup.general-h2-lockup'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -744,6 +780,11 @@ export interface ApiGetStartedBannerGetStartedBanner
       'oneToMany',
       'api::get-started-banner.get-started-banner'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -780,6 +821,11 @@ export interface ApiGettingHelpGettingHelp extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::getting-help.getting-help'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -813,6 +859,11 @@ export interface ApiGettingStartedInternalGettingStartedInternal
       'oneToMany',
       'api::getting-started-internal.getting-started-internal'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -843,6 +894,11 @@ export interface ApiGettingStartedPageGettingStartedPage
       'oneToMany',
       'api::getting-started-page.getting-started-page'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -874,6 +930,11 @@ export interface ApiGettingStartedPathGettingStartedPath
       'oneToMany',
       'api::getting-started-path.getting-started-path'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -906,6 +967,11 @@ export interface ApiHomeMarketingHomeMarketing extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::home-marketing.home-marketing'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -937,6 +1003,11 @@ export interface ApiHomeMastheadHomeMasthead extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::home-masthead.home-masthead'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -966,6 +1037,11 @@ export interface ApiHomeNewsTopHomeNewsTop extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::home-news-top.home-news-top'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -995,6 +1071,11 @@ export interface ApiLeftRailAccordionLeftRailAccordion
       'oneToMany',
       'api::left-rail-accordion.left-rail-accordion'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1026,6 +1107,11 @@ export interface ApiNewsArticleNewsArticle extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::news-article.news-article'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1056,6 +1142,11 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::product.product'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1088,6 +1179,11 @@ export interface ApiTestItemTestItem extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::test-item.test-item'
     >;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
   };
 }
 
@@ -1453,6 +1549,42 @@ export interface AdminTransferTokenPermission
   };
 }
 
+export interface AdminAuditLog extends Struct.CollectionTypeSchema {
+  collectionName: 'strapi_audit_logs';
+  info: {
+    singularName: 'audit-log';
+    pluralName: 'audit-logs';
+    displayName: 'Audit Log';
+  };
+  options: {
+    timestamps: false;
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    action: Schema.Attribute.String & Schema.Attribute.Required;
+    date: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    user: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    payload: Schema.Attribute.JSON;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'admin::audit-log'>;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ContentTypeSchemas {
@@ -1491,6 +1623,7 @@ declare module '@strapi/strapi' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
+      'admin::audit-log': AdminAuditLog;
     }
   }
 }

@@ -37,7 +37,8 @@
         "shared-blocks.paragraph-headline",
         "grids.image-headline-copy-bullet-grid",
         "grids.metric-section-block",
-        "grids.best-practices-section-block"
+        "grids.best-practices-section-block",
+        "custom-blocks.storybook-module"
       ]
     },
     "Usage": {
