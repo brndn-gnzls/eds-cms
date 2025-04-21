@@ -1,20 +1,15 @@
+// ./src/index.ts
+import {Strapi} from "@strapi/types/dist/core";
+
 export default {
-  async bootstrap({ strapi }) {
-    console.log("Removing existing admin user(s)...");
+  async bootstrap({ strapi }: { strapi: Strapi }) {
+    console.log("Listing all admin users...");
 
-    const userEmail = "john@developer.com";
-
-    const existingUser = await strapi.db.query("admin::user").findOne({
-      where: { email: userEmail },
+    const allAdmins = await strapi.db.query("admin::user").findMany({
+      // Optionally populate roles, e.g.:
+      populate: ["roles"],
     });
 
-    if (existingUser) {
-      await strapi.db.query("admin::user").delete({
-        where: { id: existingUser.id },
-      });
-      console.log(`Deleted admin user with email '${userEmail}'.`);
-    } else {
-      console.log(`No admin user found with email '${userEmail}'.`);
-    }
+    console.log("Admin users found:", allAdmins);
   },
 };
