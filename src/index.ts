@@ -1,20 +1,15 @@
-// import type { Core } from '@strapi/strapi';
+// ./src/index.ts
+import {Strapi} from "@strapi/types/dist/core";
 
 export default {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  async bootstrap({ strapi }: { strapi: Strapi }) {
+    console.log("Listing all admin users...");
 
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
-   */
-  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+    const allAdmins = await strapi.db.query("admin::user").findMany({
+      // Optionally populate roles, e.g.:
+      populate: ["roles"],
+    });
+
+    console.log("Admin users found:", allAdmins);
+  },
 };
