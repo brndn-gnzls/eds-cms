@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_shared_blocks_horizontal_rule_blocks",
+    "info": {
+        "displayName": "Horizontal Rule Block"
+    },
+    "options": {},
+    "attributes": {
+        "style": {
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "collectionName": "components_overview_blocks_table_rows",
+    "info": {
+        "displayName": "tableRows"
+    },
+    "options": {},
+    "attributes": {
+        "size": {
+            "type": "text"
+        },
+        "description": {
+            "type": "text"
+        },
+        "metrics": {
+            "type": "text"
+        }
+    }
+}

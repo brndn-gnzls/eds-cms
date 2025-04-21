@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_accessibility_table_block_accessibility_table_blocks",
+    "info": {
+        "displayName": "AccessibilityTableBlock",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "row1": {
+            "type": "component",
+            "repeatable": true,
+            "component": "rows.rows"
+        }
+    }
+}

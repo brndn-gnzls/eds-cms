@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_shared_blocks_getting_help_internal_blocks",
+    "info": {
+        "displayName": "Getting Help Internal Block"
+    },
+    "options": {},
+    "attributes": {
+        "insert": {
+            "type": "string"
+        }
+    }
+}

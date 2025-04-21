@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_bullet_list_block_items_items",
+    "info": {
+        "displayName": "items",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "boldLead": {
+            "type": "string"
+        },
+        "body": {
+            "type": "text"
+        }
+    }
+}

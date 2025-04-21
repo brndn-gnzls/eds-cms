@@ -1,0 +1,22 @@
+{
+    "kind": "singleType",
+    "collectionName": "component_catalog_mastheads",
+    "info": {
+        "singularName": "component-catalog-masthead",
+        "pluralName": "component-catalog-mastheads",
+        "displayName": "ComponentCatalogMasthead",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "headline": {
+            "type": "string"
+        },
+        "body": {
+            "type": "string"
+        }
+    }
+}

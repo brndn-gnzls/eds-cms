@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_grids_image_headline_copy_grids",
+    "info": {
+        "displayName": "Image Headline Copy Grid",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "appearanceData": {
+            "type": "component",
+            "repeatable": true,
+            "component": "grids.image-src"
+        }
+    }
+}

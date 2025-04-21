@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_grids_dont_items",
+    "info": {
+        "displayName": "dontItems",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "bestPracticeItem": {
+            "type": "component",
+            "repeatable": true,
+            "component": "grids.best-practice-item"
+        }
+    }
+}
