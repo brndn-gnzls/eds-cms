@@ -10,29 +10,6 @@ export interface SpacingBlocksSpacingBlock extends Struct.ComponentSchema {
   };
 }
 
-export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
-  collectionName: 'components_spacing_block_spacing_blocks';
-  info: {
-    displayName: 'SpacingBlock';
-  };
-  attributes: {
-    height: Schema.Attribute.Integer;
-  };
-}
-
-export interface RowsRows extends Struct.ComponentSchema {
-  collectionName: 'components_rows_rows';
-  info: {
-    displayName: 'Rows';
-    description: '';
-  };
-  attributes: {
-    componentName: Schema.Attribute.String;
-    accTest: Schema.Attribute.String;
-    accStatus: Schema.Attribute.String;
-  };
-}
-
 export interface SharedBlocksParagraphHeadline extends Struct.ComponentSchema {
   collectionName: 'components_shared_blocks_paragraph_headlines';
   info: {
@@ -84,6 +61,29 @@ export interface SharedBlocksGettingHelpInternalBlock
   };
   attributes: {
     insert: Schema.Attribute.String;
+  };
+}
+
+export interface RowsRows extends Struct.ComponentSchema {
+  collectionName: 'components_rows_rows';
+  info: {
+    displayName: 'Rows';
+    description: '';
+  };
+  attributes: {
+    componentName: Schema.Attribute.String;
+    accTest: Schema.Attribute.String;
+    accStatus: Schema.Attribute.String;
+  };
+}
+
+export interface SpacingBlockSpacingBlock extends Struct.ComponentSchema {
+  collectionName: 'components_spacing_block_spacing_blocks';
+  info: {
+    displayName: 'SpacingBlock';
+  };
+  attributes: {
+    height: Schema.Attribute.Integer;
   };
 }
 
@@ -165,17 +165,6 @@ export interface HorizontalRuleBlockHorizontalRuleBlock
   };
   attributes: {
     style: Schema.Attribute.String;
-  };
-}
-
-export interface HeadingBlocksHeadingBlock extends Struct.ComponentSchema {
-  collectionName: 'components_heading_blocks_heading_blocks';
-  info: {
-    displayName: 'Heading Block';
-  };
-  attributes: {
-    headingText: Schema.Attribute.String;
-    headingLevel: Schema.Attribute.Enumeration<['h2', 'h3', 'h4']>;
   };
 }
 
@@ -351,6 +340,17 @@ export interface GridsBestPracticeItem extends Struct.ComponentSchema {
   };
 }
 
+export interface HeadingBlocksHeadingBlock extends Struct.ComponentSchema {
+  collectionName: 'components_heading_blocks_heading_blocks';
+  info: {
+    displayName: 'Heading Block';
+  };
+  attributes: {
+    headingText: Schema.Attribute.String;
+    headingLevel: Schema.Attribute.Enumeration<['h2', 'h3', 'h4']>;
+  };
+}
+
 export interface CustomBlocksStorybookModule extends Struct.ComponentSchema {
   collectionName: 'components_custom_blocks_storybook_modules';
   info: {
@@ -437,13 +437,13 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
-      'spacing-block.spacing-block': SpacingBlockSpacingBlock;
-      'rows.rows': RowsRows;
       'shared-blocks.paragraph-headline': SharedBlocksParagraphHeadline;
       'shared-blocks.italic-caption-small': SharedBlocksItalicCaptionSmall;
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
+      'rows.rows': RowsRows;
+      'spacing-block.spacing-block': SpacingBlockSpacingBlock;
       'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'overview-blocks.table-rows': OverviewBlocksTableRows;
       'overview-blocks.table-headings': OverviewBlocksTableHeadings;
@@ -451,7 +451,6 @@ declare module '@strapi/strapi' {
       'overview-blocks.size-section-block': OverviewBlocksSizeSectionBlock;
       'icons.bullet-list-icon': IconsBulletListIcon;
       'horizontal-rule-block.horizontal-rule-block': HorizontalRuleBlockHorizontalRuleBlock;
-      'heading-blocks.heading-block': HeadingBlocksHeadingBlock;
       'grids.states-section-block': GridsStatesSectionBlock;
       'grids.right-states': GridsRightStates;
       'grids.metrics-row': GridsMetricsRow;
@@ -464,6 +463,7 @@ declare module '@strapi/strapi' {
       'grids.do-items': GridsDoItems;
       'grids.best-practices-section-block': GridsBestPracticesSectionBlock;
       'grids.best-practice-item': GridsBestPracticeItem;
+      'heading-blocks.heading-block': HeadingBlocksHeadingBlock;
       'custom-blocks.storybook-module': CustomBlocksStorybookModule;
       'bullet-list-block-items.items': BulletListBlockItemsItems;
       'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;

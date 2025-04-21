@@ -2,7 +2,7 @@ export default {
   async bootstrap({ strapi }) {
     console.log("Removing existing admin user(s)...");
 
-    const userEmail = "wes.gonzales@elevancehealth.com";
+    const userEmail = "john@developer.com";
 
     const existingUser = await strapi.db.query("admin::user").findOne({
       where: { email: userEmail },
