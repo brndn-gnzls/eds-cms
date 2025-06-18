@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_global_single_bullets",
+  "info": {
+    "displayName": "singleBullet"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "text"
+    }
+  }
+}

@@ -12,21 +12,36 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Content": {
-      "type": "blocks"
+    "articleBanner": {
+      "type": "string"
     },
-    "Image": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": true
+    "articleAuthorRole": {
+      "type": "string"
+    },
+    "articleAuthorName": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    },
+    "articleComposition": {
+      "type": "dynamiczone",
+      "components": [
+        "spacing-blocks.spacing-block",
+        "shared-blocks.paragraph-headline",
+        "shared-blocks.image-block",
+        "shared-blocks.italic-caption-small",
+        "paragraph-blocks.paragraph-block",
+        "heading-blocks.heading-block",
+        "bullet-list-block.bullet-list-block",
+        "shared-blocks.horizontal-rule-block"
+      ]
+    },
+    "thumbnail": {
+      "type": "string"
     }
   }
 }

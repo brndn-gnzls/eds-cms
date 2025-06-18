@@ -17,6 +17,26 @@
         },
         "body": {
             "type": "text"
+        },
+        "headline": {
+            "type": "component",
+            "repeatable": false,
+            "component": "heading-blocks.heading-block"
+        },
+        "leadin": {
+            "type": "component",
+            "repeatable": false,
+            "component": "paragraph-blocks.paragraph-block"
+        },
+        "headerImage": {
+            "type": "component",
+            "repeatable": true,
+            "component": "global.image-asset"
+        },
+        "notificationBox": {
+            "type": "component",
+            "repeatable": true,
+            "component": "shared-blocks.notification-box"
         }
     }
 }

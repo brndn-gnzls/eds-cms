@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_image_assets",
+  "info": {
+    "displayName": "ImageAsset"
+  },
+  "options": {},
+  "attributes": {
+    "folder": {
+      "type": "string"
+    },
+    "fileName": {
+      "type": "string"
+    }
+  }
+}

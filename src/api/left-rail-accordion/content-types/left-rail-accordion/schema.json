@@ -4,7 +4,8 @@
   "info": {
     "singularName": "left-rail-accordion",
     "pluralName": "left-rail-accordions",
-    "displayName": "LeftRailAccordions"
+    "displayName": "LeftRailAccordions",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,11 @@
     },
     "links": {
       "type": "text"
+    },
+    "urls": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.link-list"
     }
   }
 }

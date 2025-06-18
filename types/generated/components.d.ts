@@ -82,6 +82,49 @@ export interface CustomBlocksStorybookModule extends Struct.ComponentSchema {
   };
 }
 
+export interface GlobalImageAsset extends Struct.ComponentSchema {
+  collectionName: 'components_global_image_assets';
+  info: {
+    displayName: 'ImageAsset';
+  };
+  attributes: {
+    fileName: Schema.Attribute.String;
+    folder: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalLink extends Struct.ComponentSchema {
+  collectionName: 'components_global_links';
+  info: {
+    displayName: 'link';
+  };
+  attributes: {
+    label: Schema.Attribute.Text;
+    url: Schema.Attribute.Text;
+  };
+}
+
+export interface GlobalLinkList extends Struct.ComponentSchema {
+  collectionName: 'components_global_link_lists';
+  info: {
+    displayName: 'link-list';
+  };
+  attributes: {
+    linkName: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface GlobalSingleBullet extends Struct.ComponentSchema {
+  collectionName: 'components_global_single_bullets';
+  info: {
+    displayName: 'singleBullet';
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+  };
+}
+
 export interface GridsBestPracticeItem extends Struct.ComponentSchema {
   collectionName: 'components_grids_best_practice_items';
   info: {
@@ -359,6 +402,18 @@ export interface RowsRows extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBlocksAccordionItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blocks_accordion_items';
+  info: {
+    description: '';
+    displayName: 'AccordionItem';
+  };
+  attributes: {
+    content: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedBlocksGettingHelpInternalBlock
   extends Struct.ComponentSchema {
   collectionName: 'components_shared_blocks_getting_help_internal_blocks';
@@ -403,6 +458,28 @@ export interface SharedBlocksItalicCaptionSmall extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBlocksLargeAccordionBlock
+  extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blocks_large_accordion_blocks';
+  info: {
+    displayName: 'LargeAccordionBlock';
+  };
+  attributes: {
+    items: Schema.Attribute.Component<'shared-blocks.accordion-item', true>;
+  };
+}
+
+export interface SharedBlocksNotificationBox extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blocks_notification_boxes';
+  info: {
+    displayName: 'NotificationBox';
+  };
+  attributes: {
+    borderColor: Schema.Attribute.String;
+    content: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedBlocksParagraphHeadline extends Struct.ComponentSchema {
   collectionName: 'components_shared_blocks_paragraph_headlines';
   info: {
@@ -410,6 +487,20 @@ export interface SharedBlocksParagraphHeadline extends Struct.ComponentSchema {
   };
   attributes: {
     headline: Schema.Attribute.String;
+  };
+}
+
+export interface SharedBlocksResourceGridItem extends Struct.ComponentSchema {
+  collectionName: 'components_shared_blocks_resource_grid_items';
+  info: {
+    displayName: 'resource-grid-item';
+  };
+  attributes: {
+    cornerIcon: Schema.Attribute.String;
+    description: Schema.Attribute.Text;
+    linkLabel: Schema.Attribute.String;
+    linkUrl: Schema.Attribute.String;
+    logo: Schema.Attribute.String;
   };
 }
 
@@ -443,6 +534,10 @@ declare module '@strapi/strapi' {
       'bullet-list-block-items.items': BulletListBlockItemsItems;
       'bullet-list-block.bullet-list-block': BulletListBlockBulletListBlock;
       'custom-blocks.storybook-module': CustomBlocksStorybookModule;
+      'global.image-asset': GlobalImageAsset;
+      'global.link': GlobalLink;
+      'global.link-list': GlobalLinkList;
+      'global.single-bullet': GlobalSingleBullet;
       'grids.best-practice-item': GridsBestPracticeItem;
       'grids.best-practices-section-block': GridsBestPracticesSectionBlock;
       'grids.do-items': GridsDoItems;
@@ -464,11 +559,15 @@ declare module '@strapi/strapi' {
       'overview-blocks.table-rows': OverviewBlocksTableRows;
       'paragraph-blocks.paragraph-block': ParagraphBlocksParagraphBlock;
       'rows.rows': RowsRows;
+      'shared-blocks.accordion-item': SharedBlocksAccordionItem;
       'shared-blocks.getting-help-internal-block': SharedBlocksGettingHelpInternalBlock;
       'shared-blocks.horizontal-rule-block': SharedBlocksHorizontalRuleBlock;
       'shared-blocks.image-block': SharedBlocksImageBlock;
       'shared-blocks.italic-caption-small': SharedBlocksItalicCaptionSmall;
+      'shared-blocks.large-accordion-block': SharedBlocksLargeAccordionBlock;
+      'shared-blocks.notification-box': SharedBlocksNotificationBox;
       'shared-blocks.paragraph-headline': SharedBlocksParagraphHeadline;
+      'shared-blocks.resource-grid-item': SharedBlocksResourceGridItem;
       'spacing-block.spacing-block': SpacingBlockSpacingBlock;
       'spacing-blocks.spacing-block': SpacingBlocksSpacingBlock;
     }

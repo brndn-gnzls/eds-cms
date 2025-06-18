@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_global_link_lists",
+  "info": {
+    "displayName": "link-list"
+  },
+  "options": {},
+  "attributes": {
+    "linkName": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

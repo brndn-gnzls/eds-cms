@@ -1,0 +1,20 @@
+{
+    "kind": "singleType",
+    "collectionName": "links",
+    "info": {
+        "singularName": "link",
+        "pluralName": "links",
+        "displayName": "link"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "url": {
+            "type": "string"
+        },
+        "label": {
+            "type": "string"
+        }
+    }
+}

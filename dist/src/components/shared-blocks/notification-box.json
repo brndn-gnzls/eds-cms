@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_shared_blocks_notification_boxes",
+    "info": {
+        "displayName": "NotificationBox"
+    },
+    "options": {},
+    "attributes": {
+        "borderColor": {
+            "type": "string"
+        },
+        "content": {
+            "type": "text"
+        }
+    }
+}

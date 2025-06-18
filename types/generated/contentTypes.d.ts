@@ -418,14 +418,24 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Content: Schema.Attribute.Blocks;
+    articleAuthorName: Schema.Attribute.String;
+    articleAuthorRole: Schema.Attribute.String;
+    articleBanner: Schema.Attribute.String;
+    articleComposition: Schema.Attribute.DynamicZone<
+      [
+        'spacing-blocks.spacing-block',
+        'shared-blocks.paragraph-headline',
+        'shared-blocks.image-block',
+        'shared-blocks.italic-caption-small',
+        'paragraph-blocks.paragraph-block',
+        'heading-blocks.heading-block',
+        'bullet-list-block.bullet-list-block',
+        'shared-blocks.horizontal-rule-block',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    Image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -438,10 +448,12 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::review-workflows.workflow-stage'
     >;
-    Title: Schema.Attribute.String;
+    thumbnail: Schema.Attribute.String;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url: Schema.Attribute.Text;
   };
 }
 
@@ -470,6 +482,7 @@ export interface ApiComponentCatalogInventoryComponentCatalogInventory
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String;
     strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     strapi_stage: Schema.Attribute.Relation<
       'oneToOne',
@@ -540,8 +553,12 @@ export interface ApiComponentDetailPageComponentDetailPage
         'bullet-list-block.bullet-list-block',
         'shared-blocks.horizontal-rule-block',
         'shared-blocks.getting-help-internal-block',
+        'global.single-bullet',
+        'global.link',
+        'shared-blocks.notification-box',
       ]
     >;
+    bannerBody: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -570,6 +587,9 @@ export interface ApiComponentDetailPageComponentDetailPage
         'grids.metric-section-block',
         'grids.best-practices-section-block',
         'custom-blocks.storybook-module',
+        'shared-blocks.notification-box',
+        'global.single-bullet',
+        'global.link',
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -592,6 +612,11 @@ export interface ApiComponentDetailPageComponentDetailPage
         'shared-blocks.horizontal-rule-block',
         'shared-blocks.getting-help-internal-block',
         'shared-blocks.italic-caption-small',
+        'global.single-bullet',
+        'global.link',
+        'bullet-list-block-items.items',
+        'bullet-list-block.bullet-list-block',
+        'shared-blocks.notification-box',
       ]
     >;
   };
@@ -775,6 +800,7 @@ export interface ApiGettingStartedInternalGettingStartedInternal
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    faqItems: Schema.Attribute.Component<'shared-blocks.accordion-item', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -812,13 +838,23 @@ export interface ApiGettingStartedPageGettingStartedPage
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    headerImage: Schema.Attribute.Component<'global.image-asset', true>;
     heading: Schema.Attribute.String;
+    headline: Schema.Attribute.Component<'heading-blocks.heading-block', false>;
+    leadin: Schema.Attribute.Component<
+      'paragraph-blocks.paragraph-block',
+      false
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::getting-started-page.getting-started-page'
     > &
       Schema.Attribute.Private;
+    notificationBox: Schema.Attribute.Component<
+      'shared-blocks.notification-box',
+      true
+    >;
     publishedAt: Schema.Attribute.DateTime;
     strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     strapi_stage: Schema.Attribute.Relation<
@@ -982,6 +1018,7 @@ export interface ApiLeftRailAccordionLeftRailAccordion
   extends Struct.CollectionTypeSchema {
   collectionName: 'left_rail_accordions';
   info: {
+    description: '';
     displayName: 'LeftRailAccordions';
     pluralName: 'left-rail-accordions';
     singularName: 'left-rail-accordion';
@@ -1010,6 +1047,38 @@ export interface ApiLeftRailAccordionLeftRailAccordion
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    urls: Schema.Attribute.Component<'global.link-list', true>;
+  };
+}
+
+export interface ApiLinkLink extends Struct.SingleTypeSchema {
+  collectionName: 'links';
+  info: {
+    displayName: 'link';
+    pluralName: 'links';
+    singularName: 'link';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    label: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::link.link'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -1074,6 +1143,39 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
     Price: Schema.Attribute.Decimal;
+    publishedAt: Schema.Attribute.DateTime;
+    strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
+    strapi_stage: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::review-workflows.workflow-stage'
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSingleBulletSingleBullet extends Struct.SingleTypeSchema {
+  collectionName: 'single_bullets';
+  info: {
+    displayName: 'singleBullet';
+    pluralName: 'single-bullets';
+    singularName: 'single-bullet';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::single-bullet.single-bullet'
+    > &
+      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     strapi_assignee: Schema.Attribute.Relation<'oneToOne', 'admin::user'>;
     strapi_stage: Schema.Attribute.Relation<
@@ -1654,8 +1756,10 @@ declare module '@strapi/strapi' {
       'api::home-masthead.home-masthead': ApiHomeMastheadHomeMasthead;
       'api::home-news-top.home-news-top': ApiHomeNewsTopHomeNewsTop;
       'api::left-rail-accordion.left-rail-accordion': ApiLeftRailAccordionLeftRailAccordion;
+      'api::link.link': ApiLinkLink;
       'api::news-article.news-article': ApiNewsArticleNewsArticle;
       'api::product.product': ApiProductProduct;
+      'api::single-bullet.single-bullet': ApiSingleBulletSingleBullet;
       'api::test-item.test-item': ApiTestItemTestItem;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
