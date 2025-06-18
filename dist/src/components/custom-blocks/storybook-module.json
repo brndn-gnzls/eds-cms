@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_custom_blocks_storybook_modules",
+    "info": {
+        "displayName": "Storybook Module"
+    },
+    "options": {},
+    "attributes": {
+        "componentName": {
+            "type": "string"
+        }
+    }
+}

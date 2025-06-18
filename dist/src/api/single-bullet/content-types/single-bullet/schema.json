@@ -1,0 +1,17 @@
+{
+    "kind": "singleType",
+    "collectionName": "single_bullets",
+    "info": {
+        "singularName": "single-bullet",
+        "pluralName": "single-bullets",
+        "displayName": "singleBullet"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "attributes": {
+        "content": {
+            "type": "text"
+        }
+    }
+}

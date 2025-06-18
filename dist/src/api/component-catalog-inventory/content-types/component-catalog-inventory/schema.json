@@ -1,0 +1,28 @@
+{
+    "kind": "collectionType",
+    "collectionName": "component_catalog_inventories",
+    "info": {
+        "singularName": "component-catalog-inventory",
+        "pluralName": "component-catalog-inventories",
+        "displayName": "ComponentCatalogInventory",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "imageUrl": {
+            "type": "string"
+        },
+        "title": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "slug": {
+            "type": "string"
+        }
+    }
+}

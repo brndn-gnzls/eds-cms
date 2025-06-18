@@ -1,0 +1,25 @@
+{
+    "kind": "collectionType",
+    "collectionName": "get_started_banners",
+    "info": {
+        "singularName": "get-started-banner",
+        "pluralName": "get-started-banners",
+        "displayName": "GetStartedBanner",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "slug": {
+            "type": "string"
+        },
+        "heading": {
+            "type": "string"
+        },
+        "body": {
+            "type": "text"
+        }
+    }
+}

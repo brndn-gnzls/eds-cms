@@ -1,0 +1,12 @@
+{
+    "collectionName": "components_horizontal_rule_block_horizontal_rule_blocks",
+    "info": {
+        "displayName": "HorizontalRuleBlock"
+    },
+    "options": {},
+    "attributes": {
+        "style": {
+            "type": "string"
+        }
+    }
+}

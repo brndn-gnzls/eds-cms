@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_blocks_large_accordion_blocks",
+  "info": {
+    "displayName": "LargeAccordionBlock"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared-blocks.accordion-item"
+    }
+  }
+}

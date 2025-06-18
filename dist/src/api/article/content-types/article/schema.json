@@ -1,0 +1,47 @@
+{
+    "kind": "collectionType",
+    "collectionName": "articles",
+    "info": {
+        "singularName": "article",
+        "pluralName": "articles",
+        "displayName": "Article",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "articleBanner": {
+            "type": "string"
+        },
+        "articleAuthorRole": {
+            "type": "string"
+        },
+        "articleAuthorName": {
+            "type": "string"
+        },
+        "url": {
+            "type": "text"
+        },
+        "articleComposition": {
+            "type": "dynamiczone",
+            "components": [
+                "spacing-blocks.spacing-block",
+                "shared-blocks.paragraph-headline",
+                "shared-blocks.image-block",
+                "shared-blocks.italic-caption-small",
+                "paragraph-blocks.paragraph-block",
+                "heading-blocks.heading-block",
+                "bullet-list-block.bullet-list-block",
+                "shared-blocks.horizontal-rule-block"
+            ]
+        },
+        "thumbnail": {
+            "type": "string"
+        }
+    }
+}

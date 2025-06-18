@@ -1,0 +1,28 @@
+{
+    "collectionName": "components_grids_states_section_blocks",
+    "info": {
+        "displayName": "States Section Block",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "heading": {
+            "type": "string"
+        },
+        "introParagraph": {
+            "type": "text"
+        },
+        "leftImages": {
+            "displayName": "leftImages",
+            "type": "component",
+            "repeatable": true,
+            "component": "grids.left-images"
+        },
+        "rightStates": {
+            "displayName": "rightStates",
+            "type": "component",
+            "repeatable": true,
+            "component": "grids.right-states"
+        }
+    }
+}

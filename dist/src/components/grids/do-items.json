@@ -1,0 +1,15 @@
+{
+    "collectionName": "components_grids_do_items",
+    "info": {
+        "displayName": "doItems",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "bestPracticeItem": {
+            "type": "component",
+            "repeatable": true,
+            "component": "grids.best-practice-item"
+        }
+    }
+}

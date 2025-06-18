@@ -38,7 +38,10 @@
         "grids.image-headline-copy-bullet-grid",
         "grids.metric-section-block",
         "grids.best-practices-section-block",
-        "custom-blocks.storybook-module"
+        "custom-blocks.storybook-module",
+        "shared-blocks.notification-box",
+        "global.single-bullet",
+        "global.link"
       ]
     },
     "Usage": {
@@ -50,7 +53,12 @@
         "shared-blocks.image-block",
         "shared-blocks.horizontal-rule-block",
         "shared-blocks.getting-help-internal-block",
-        "shared-blocks.italic-caption-small"
+        "shared-blocks.italic-caption-small",
+        "global.single-bullet",
+        "global.link",
+        "bullet-list-block-items.items",
+        "bullet-list-block.bullet-list-block",
+        "shared-blocks.notification-box"
       ]
     },
     "Accessibility": {
@@ -62,8 +70,14 @@
         "accessibility-blocks.accessibility-table-block",
         "bullet-list-block.bullet-list-block",
         "shared-blocks.horizontal-rule-block",
-        "shared-blocks.getting-help-internal-block"
+        "shared-blocks.getting-help-internal-block",
+        "global.single-bullet",
+        "global.link",
+        "shared-blocks.notification-box"
       ]
+    },
+    "bannerBody": {
+      "type": "text"
     }
   }
 }

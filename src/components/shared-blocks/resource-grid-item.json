@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_blocks_resource_grid_items",
+  "info": {
+    "displayName": "resource-grid-item"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "string"
+    },
+    "linkUrl": {
+      "type": "string"
+    },
+    "linkLabel": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cornerIcon": {
+      "type": "string"
+    }
+  }
+}

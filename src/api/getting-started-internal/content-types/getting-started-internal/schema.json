@@ -26,6 +26,11 @@
     },
     "tabs": {
       "type": "json"
+    },
+    "faqItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared-blocks.accordion-item"
     }
   }
 }

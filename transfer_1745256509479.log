@@ -1,0 +1,5 @@
+[2025-04-21 13:28:29.486] error: [ERROR] insert into "public"."getting_helps" ("community_forums", "created_at", "document_id", "email_us", "feedback_form", "heading", "intro_paragraph", "list_items", "locale", "need_help_body", "need_help_heading", "published_at", "social_media", "updated_at") values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14) returning "id" - value too long for type character varying(255)
+[2025-04-21 13:28:59.495] error: [ERROR] WebSocket is not open: readyState 3 (CLOSED)
+[2025-04-21 13:28:59.506] error: [ERROR] WebSocket is not open: readyState 3 (CLOSED)
+[2025-04-21 13:28:59.514] error: [ERROR] WebSocket is not open: readyState 3 (CLOSED)
+[2025-04-21 13:28:59.519] error: [FATAL] WebSocket is not open: readyState 3 (CLOSED)

@@ -1,0 +1,83 @@
+{
+    "kind": "collectionType",
+    "collectionName": "component_detail_pages",
+    "info": {
+        "singularName": "component-detail-page",
+        "pluralName": "component-detail-pages",
+        "displayName": "componentDetailPages",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "slug": {
+            "type": "string",
+            "unique": true
+        },
+        "Overview": {
+            "type": "dynamiczone",
+            "components": [
+                "heading-blocks.heading-block",
+                "spacing-blocks.spacing-block",
+                "shared-blocks.italic-caption-small",
+                "shared-blocks.image-block",
+                "shared-blocks.horizontal-rule-block",
+                "shared-blocks.getting-help-internal-block",
+                "paragraph-blocks.paragraph-block",
+                "bullet-list-block.bullet-list-block",
+                "icons.bullet-list-icon",
+                "grids.image-headline-copy-grid",
+                "grids.states-section-block",
+                "overview-blocks.size-section-block",
+                "shared-blocks.paragraph-headline",
+                "grids.image-headline-copy-bullet-grid",
+                "grids.metric-section-block",
+                "grids.best-practices-section-block",
+                "custom-blocks.storybook-module",
+                "shared-blocks.notification-box",
+                "global.single-bullet",
+                "global.link"
+            ]
+        },
+        "Usage": {
+            "type": "dynamiczone",
+            "components": [
+                "heading-blocks.heading-block",
+                "paragraph-blocks.paragraph-block",
+                "spacing-blocks.spacing-block",
+                "shared-blocks.image-block",
+                "shared-blocks.horizontal-rule-block",
+                "shared-blocks.getting-help-internal-block",
+                "shared-blocks.italic-caption-small",
+                "global.single-bullet",
+                "global.link",
+                "bullet-list-block-items.items",
+                "bullet-list-block.bullet-list-block",
+                "shared-blocks.notification-box"
+            ]
+        },
+        "Accessibility": {
+            "type": "dynamiczone",
+            "components": [
+                "heading-blocks.heading-block",
+                "paragraph-blocks.paragraph-block",
+                "spacing-blocks.spacing-block",
+                "accessibility-blocks.accessibility-table-block",
+                "bullet-list-block.bullet-list-block",
+                "shared-blocks.horizontal-rule-block",
+                "shared-blocks.getting-help-internal-block",
+                "global.single-bullet",
+                "global.link",
+                "shared-blocks.notification-box"
+            ]
+        },
+        "bannerBody": {
+            "type": "text"
+        }
+    }
+}

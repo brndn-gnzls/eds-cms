@@ -1,0 +1,31 @@
+{
+    "kind": "collectionType",
+    "collectionName": "test_items",
+    "info": {
+        "singularName": "test-item",
+        "pluralName": "test-items",
+        "displayName": "TestItems"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "Title": {
+            "type": "string"
+        },
+        "Description": {
+            "type": "blocks"
+        },
+        "Image": {
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ],
+            "type": "media",
+            "multiple": true
+        }
+    }
+}

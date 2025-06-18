@@ -1,0 +1,16 @@
+{
+    "collectionName": "components_grids_right_states",
+    "info": {
+        "displayName": "rightStates",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "boldTitle": {
+            "type": "string"
+        },
+        "paragraph": {
+            "type": "text"
+        }
+    }
+}
